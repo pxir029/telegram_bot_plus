@@ -5,7 +5,7 @@ workers_dev = true
 
 [[kv_namespaces]]
 binding = "PX_KV"
-id = "ENTER-YOUR-KV-ID"
+id = "c857aba035e64f219780f09f29f72225"
 
 [assets]
 directory = "./public"
