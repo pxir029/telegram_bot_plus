@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/60 rounded-full;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-slate-900/50 border border-white/10 backdrop-blur-xl shadow-glass;
+  }
+  .glass-card {
+    @apply bg-slate-900/40 border border-white/[0.07] backdrop-blur-lg shadow-glass-sm rounded-2xl;
+  }
+  .glass-input {
+    @apply bg-slate-950/60 border border-white/10 rounded-xl px-3.5 py-2.5 text-sm
+           text-slate-100 placeholder:text-slate-500
+           focus:outline-none focus:ring-2 focus:ring-px-500/40 focus:border-px-500/50
+           transition-all duration-200;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium
+           transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-px-600 hover:bg-px-500 text-white shadow-lg shadow-px-600/20;
+  }
+  .btn-ghost {
+    @apply btn bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10;
+  }
+  .btn-danger {
+    @apply btn bg-rose-600/90 hover:bg-rose-500 text-white;
+  }
+  .btn-success {
+    @apply btn bg-emerald-600/90 hover:bg-emerald-500 text-white;
+  }
+  .nav-item {
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-slate-400
+           hover:bg-white/5 hover:text-slate-100 transition-colors cursor-pointer;
+  }
+  .nav-item.active {
+    @apply bg-px-600/15 text-px-300 border border-px-500/20;
+  }
+  .badge {
+    @apply inline-flex items-center rounded-lg px-2 py-0.5 text-xs font-medium;
+  }
+  .badge-green {
+    @apply badge bg-emerald-500/15 text-emerald-400 border border-emerald-500/20;
+  }
+  .badge-red {
+    @apply badge bg-rose-500/15 text-rose-400 border border-rose-500/20;
+  }
+  .badge-blue {
+    @apply badge bg-px-500/15 text-px-300 border border-px-500/20;
+  }
+  .table-row {
+    @apply border-b border-white/[0.04] hover:bg-white/[0.03] transition-colors;
+  }
+}
